@@ -273,3 +273,23 @@ class OllamaRunner(TypeEvalPyRunner):
                 model_results_path,
                 f"{self.host_results_path}/{model}",
             )
+
+
+class MonkeyType(TypeEvalPyRunner):
+    def __init__(self, host_results_path, debug=False, nocache=False):
+        super().__init__(
+            "monkeytype",
+            "./target_tools/monkeytype",
+            host_results_path,
+            nocache=nocache,
+        )
+
+
+class PyAnnotate(TypeEvalPyRunner):
+    def __init__(self, host_results_path, debug=False, nocache=False):
+        super().__init__(
+            "pyannotate",
+            "./target_tools/pyannotate",
+            host_results_path,
+            nocache=nocache,
+        )
